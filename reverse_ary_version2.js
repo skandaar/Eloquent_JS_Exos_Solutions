@@ -15,4 +15,4 @@ ary2 = [1, 'b', true, "hello", undefined];
 
 
 console.log(reverseArray(ary1));  // --> [5, 4, 3, 2, 1]
-console.log(reverseArray(ary2));  // --> [undefined, "hello", true, 1]
+console.log(reverseArray(ary2));  // --> [undefined, "hello", true, 'b', 1]
