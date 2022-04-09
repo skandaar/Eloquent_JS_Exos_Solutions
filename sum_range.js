@@ -15,5 +15,5 @@ function sum(ary) {
   return sum;
 }
 
-console.log(sum(range(0, 3)));
+console.log(sum(range(1, 10))); // --> 55
 
