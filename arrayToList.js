@@ -4,7 +4,7 @@ function arrayToList(ary) {
   let value = 0;
   let rest = {};
   function creatObj(i) {
-    value = i;
+    value = ary[i];
     if (i == ary.length - 1) {
       rest = null;
       return ({value, rest})
@@ -14,7 +14,7 @@ function arrayToList(ary) {
   }
   return creatObj(0);
 }
-ary = [0, 1, 2];
+ary = [1, 3, 5];
 obj = arrayToList(ary);
 console.log(obj);
 
