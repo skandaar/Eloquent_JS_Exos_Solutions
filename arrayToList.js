@@ -14,7 +14,28 @@ function arrayToList(ary) {
   }
   return creatObj(0);
 }
-ary = [1, 3, 5];
-obj = arrayToList(ary);
-console.log(obj);
+ary = [1, 2, 3];
+list = arrayToList(ary);
+console.log(list);
+
+function listToArray(o) {
+  let ary = Object.keys(o);
+  let obj = o[ary[1]];
+  let elem = [];
+  elem.push(o[ary[0]]);
+  function accessList() {
+    if (obj == null) {
+      return elem;
+    } else if (obj[ary[1]] == null) {
+      elem.push(obj[ary[0]]);
+      return elem;
+    } else {
+      elem.push(obj[ary[0]]);
+      obj = obj[ary[1]];
+      return accessList();
+    }
+  }
+  return accessList();
+}
+console.log(listToArray(list));
 
