@@ -14,9 +14,6 @@ function arrayToList(ary) {
   }
   return creatObj(0);
 }
-ary = [1, 2, 3];
-list = arrayToList(ary);
-console.log(list);
 
 function listToArray(o) {
   let ary = Object.keys(o);
@@ -37,5 +34,29 @@ function listToArray(o) {
   }
   return accessList();
 }
+
+function prepend(elem, list) {
+  let properties = Object.keys(list);
+  let obj = {};
+  obj[properties[0]] = elem;
+  obj[properties[1]] = list;
+  return (obj);
+}
+
+function nth(list, index) {
+  let elem = [];
+  elem = listToArray(list);
+  for (let i = 0; i < elem.length; i++) {
+    if (index == i) { return elem[i]; }
+  }
+  return undefined;
+}
+
+ary = [1, 2, 3];
+list = arrayToList(ary);
+console.log(list);
 console.log(listToArray(list));
+list = prepend(0, list);
+console.log(list);
+console.log(nth(list, 3));
 
