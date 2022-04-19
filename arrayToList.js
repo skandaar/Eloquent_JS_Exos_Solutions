@@ -42,7 +42,7 @@ function prepend(elem, list) {
   obj[properties[1]] = list;
   return (obj);
 }
-
+/*
 function nth(list, index) {
   let elem = [];
   elem = listToArray(list);
@@ -51,6 +51,25 @@ function nth(list, index) {
   }
   return undefined;
 }
+*/
+
+// A recursive version 
+function nth(list, index) {
+  let elem = [];
+  elem = listToArray(list);
+  let size = elem.length;
+  function check(i) {
+    if (i > size) {
+      return undefined;
+    } else if (i == index) {
+      return elem[i];
+    } else {
+      return check(i + 1);
+    }
+  }
+  return check(0);
+}
+
 
 ary = [1, 2, 3];
 list = arrayToList(ary);
@@ -58,5 +77,5 @@ console.log(list);
 console.log(listToArray(list));
 list = prepend(0, list);
 console.log(list);
-console.log(nth(list, 3));
+console.log(nth(list, 1));
 
